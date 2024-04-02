@@ -1,4 +1,3 @@
-
 //=========================server for taskmanager app==============================
 
 const express = require("express");
@@ -6,7 +5,7 @@ const app = express();
 const path = require("path");
 const hbs = require("hbs");
 const taskRoutes = require("./routes/task");
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 //static files
 const publicDirectory = path.join(__dirname, "/public");
