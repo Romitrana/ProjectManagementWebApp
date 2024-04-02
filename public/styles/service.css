@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+.container {
+  max-width: 800px;
+  margin: 3rem auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #21450f;
+}
+.service {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.service img {
+  width: 100px;
+  margin-right: 20px;
+}
+.service-details {
+  flex-grow: 1;
+}
+.service-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #21450f;
+}
+.service-description {
+  color: #666;
+  color: #21450f;
+}

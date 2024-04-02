@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="icon" type="image/png" href="../images/FT.com.png">
+    <title>Future-Tech | Home</title>
+  </head>
+  <body>
+    <div id="messageBox"><div id="timeprogress"></div><p id="message">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><span id="closeMessage"><i class="fa-solid fa-xmark"></i></span></div>
+    <div id="backlash"></div>
+    {{>header}}
+    <section id="container"> 
+    <aside id="filter" class="animationforward"> 
+     <span id="tab"><i id="open_close" class="fa-solid fa-angle-left"></i></span>
+      <button id="createBtn">Create Task +</button>
+    </aside>
+    <section id="selected_task"> 
+    <span id="closeSelectTaskModel"><i class="fa-solid fa-xmark"></i></span>
+    <form id="selectedtaskData"> 
+     {{!-- selected form data goes here --}}
+    </form>
+    </section>
+    <main id="filterContainer"> 
+    <h1>Your Tasks</h1>
+    <div id="createTaskModel">
+      <span id="closeTaskModel"><i class="fa-solid fa-xmark"></i></span>
+      <form id="taskForm"> 
+       <label for="taskID">TaskID</label><br>
+       <input type="text" id="taskID" placeholder="TK_05" required><br>
+       <label for="task">Task</label><br>
+       <input type="text" id="task" placeholder="fix the bugs in create user feature" required><br>
+       <label for="duration">Duration</label><br>
+       <input type="text" id="duration" placeholder="12 weeks" required><br>
+       <label for="status">Status</label><br>
+       <input type="text" id="status" placeholder="pending" required><br>
+       <label for="teamID">TeamID</label><br>
+       <input type="text" id="teamID" placeholder="T202" required><br>
+       <label for="projHead">ProjectHead</label><br>
+       <input type="text" id="projHead" placeholder="shubham kumar" required><br>
+       <label for="completed">Completed</label><br>
+       <input type="number" id="completed" placeholder="75% (<=100)" required><br>
+       <input type="button" id="submitTask" value="Create">
+      </form>
+     </div>
+    <div id="task-container"> 
+     {{!-- all tasks goes here --}}
+    </div>
+    </main>
+    </section>
+    {{>footer}}
+    <script type="module" src="../js/index.js"></script>
+  </body>
+</html>

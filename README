@@ -1,0 +1,21 @@
+commands : 
+
+1. to get the All tasks
+    ==>   node app.js getTasks
+2. to get the single task
+    ==>   node app.js getTask --taskID="TK_06"
+3. to remove a task
+    ==> node app.js removeTask --taskID="TK_07"
+4. create new task
+    ==>  node app.js addTask --taskID="TK_09" --task="testing create task function" --duration="4 week" --status="going on" --teamID="T202" --projectHead="shankar chauchan" --completed="50%"
+5. get specific info
+      // for duration
+    ==> node app.js info --infoType="duration" --filter="2 weeks"    
+      // for task status
+    ==> node app.js info --infoType="status" --filter="pending"
+      // for task completed
+    ==> node app.js info --infoType="completed" --filter="0%"
+      // for task teamID
+    ==>  node app.js info --infoType="teamID" --filter="T200"
+6. update task
+    ==> node app.js update --taskID="TK_095" --property="duration" --updateData="3 weeks"

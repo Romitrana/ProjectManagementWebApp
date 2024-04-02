@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+body {
+  position: relative;
+}
+
+#messagebox {
+  position: fixed;
+  width: 40%;
+  height: 4rem;
+  border: 3px solid #333;
+  border-radius: 5px 0 0 5px;
+  top: 6rem;
+  right: -40%;
+  z-index: 100;
+  background-color: #008000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+#messagebox span {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #333 !important;
+}
+.showMessage {
+  animation: sm 0.6s 1 forwards ease;
+}
+.hideMessage {
+  animation: hm 0.6s 1 forwards ease;
+}
+.timeline {
+  width: 100%;
+  height: 0.3rem;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgb(49, 152, 193);
+  animation: tline 5s 1 forwards linear;
+}
+
+@keyframes sm {
+  from {
+    top: 6rem;
+    right: -40%;
+  }
+  to {
+    top: 6rem;
+    right: 0;
+  }
+}
+@keyframes hm {
+  from {
+    top: 6rem;
+    right: 0;
+  }
+  to {
+    top: 6rem;
+    right: -40%;
+  }
+}
+@keyframes tline {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+#container {
+  background-color: #466438f8;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  position: relative;
+  padding-bottom: 2rem;
+}
+#container #filter {
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  background-color: #5e8849;
+  left: -25%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  z-index: 2;
+}
+.animationforward {
+  animation: filterRoll 1 1.5s forwards ease;
+}
+.animationbackward {
+  animation: filterRollBack 1 1.2s forwards ease;
+}
+#container #filter #tab {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  background-color: #5e8849;
+  right: -2rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+@keyframes filterRoll {
+  from {
+    left: -25%;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes filterRollBack {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -25%;
+  }
+}
+
+#filterContainer h1 {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  color: #fff;
+  font-family: "poppins", sans-serif;
+  letter-spacing: 2px;
+}
+#task-container {
+  border: 2px solid #21450f;
+  border-radius: 1rem;
+  margin: 1rem 1rem 2rem 1rem;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+  padding: 1rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+#createTaskModel {
+  width: 30rem;
+  height: auto;
+  background-color: #21450f;
+  border-radius: 1rem;
+  position: fixed;
+  animation: createTask 1s forwards ease;
+  left: 50%;
+  top: -70%;
+  transform: translateX(-50%);
+  box-shadow: 4px 4px 30px 10px rgba(250, 249, 249, 0.8);
+  display: none;
+  z-index: 50;
+}
+
+#closeTaskModel,
+#closeSelectTaskModel {
+  font-size: 0.8rem;
+  border: 1px solid #fff;
+  color: #fff;
+  top: 0.6rem;
+  width: 1rem;
+  height: 1rem;
+  right: 0.6rem;
+  font-weight: 600;
+  position: absolute;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+@keyframes createTask {
+  from {
+    left: 50%;
+    top: -70%;
+  }
+  to {
+    left: 50%;
+    top: 18%;
+  }
+}
+#createBtn {
+  width: 80%;
+  display: block;
+  height: 2.4rem;
+  border-radius: 0.4rem;
+  margin: 2rem auto;
+  border: 2px solid #fff;
+  background-color: #21450f;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+#createBtn:hover {
+  cursor: pointer;
+  background-color: #295115;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.6);
+  transition: all 0.4s ease;
+}
+
+#createTaskModel form,
+#selected_task form {
+  padding: 1rem 1.5rem;
+}
+#createTaskModel form label,
+#selected_task form label {
+  font-family: "poppins", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+#createTaskModel form input,
+#selected_task form input {
+  width: 100%;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  padding: 0 1rem 0 0.5rem;
+  color: #21450f;
+  margin: 2px;
+  font-weight: 600;
+}
+#createTaskModel form input:focus,
+#selected_task form input:focus {
+  border: #21450f;
+  background: #709c59;
+  color: #fff;
+}
+#createTaskModel form #submitTask {
+  margin-top: 0.8rem;
+  background-color: #5e8849;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+}
+#createTaskModel form #submitTask:hover {
+  background-color: #3b6526;
+}
+
+/* cards */
+.card {
+  border: 4px solid #21450f;
+  outline: 2px double #fff;
+  width: 28rem;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  padding: 1rem;
+  font-family: monospace, sans-serif;
+  background-color: #5b8c6b;
+  margin: 1rem;
+}
+.card:hover {
+  transition: all 0.3s ease;
+  scale: 1.05;
+}
+.idies {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+.idies h5,
+.left h5 {
+  border: 1px solid #21450f;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 0.3rem 0.5rem;
+  display: inline;
+  color: #fff;
+  background-color: #3b6526;
+}
+.left h5 {
+  margin: 0.2rem 0;
+}
+.aboutTask {
+  height: auto;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.aboutTask h5 {
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  background-color: #3b6526;
+  display: inline;
+  padding: 0.2rem 0.6rem;
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.8);
+}
+.aboutTask p {
+  padding: 0.6rem;
+  font-family: "poppins", sans-serif;
+  text-align: left;
+  color: #fff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.8);
+  border-radius: 0 10px 10px 10px;
+  background-color: #3b6526;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+}
+.other {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+.other .left {
+  display: flex;
+  flex-direction: column;
+}
+.other .left span {
+  background-color: yellow;
+  border: 2px solid rgb(210, 155, 37);
+  color: #333;
+  padding: 0 0.4rem;
+  border-radius: 10px;
+}
+/* progresss bar */
+div[role="progressbar"] {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+  --size: 4rem;
+  --fg: #21450f;
+  --bg: rgb(105, 176, 126);
+  --pgPercentage: var(--value);
+  animation: growProgressBar 2s 1 forwards ease-in-out;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+      closest-side,
+      white 80%,
+      transparent 0 99.9%,
+      white 0
+    ),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--fg);
+}
+
+@keyframes growProgressBar {
+  0%,
+  33% {
+    --pgPercentage: 0;
+  }
+  100% {
+    --pgPercentage: var(--value);
+  }
+}
+
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+}
+
+@property --pgPercentage {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+div[role="progressbar"]:hover {
+  scale: 1.1;
+  transition: all 0.2s ease;
+}
+/* progress bar ends here */
+
+/* selected task */
+#selected_task {
+  width: 36rem;
+  height: 30rem;
+  background-color: #21450f;
+  border-radius: 1rem;
+  position: fixed;
+  animation: createTask 1s forwards ease;
+  left: 50%;
+  top: -70%;
+  transform: translateX(-50%);
+  box-shadow: 4px 4px 30px 10px rgba(250, 249, 249, 0.8);
+  display: none;
+  z-index: 60;
+}
+
+.buttons {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons button {
+  border-radius: 5px;
+  padding: 0.5rem 2rem;
+  width: 40%;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+.buttons button:hover {
+  box-shadow: 2px 2px 4px rgba(250, 249, 249, 0.8);
+}
+#updateTask {
+  border: 2px solid rgb(249, 142, 2);
+  background-color: rgb(224, 191, 72);
+  color: #333;
+}
+#deleteTask {
+  border: 2px solid rgb(178, 61, 29);
+  background-color: rgb(203, 79, 51);
+  color: #fff;
+}
+
+/* backlash */
+#backlash {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  display: none;
+}
